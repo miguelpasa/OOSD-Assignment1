@@ -1,3 +1,4 @@
+package controller;
 
 public class GameEngine {
 
@@ -7,7 +8,7 @@ public class GameEngine {
 		//set currentPlayer as first player
 		
 		//while loop until a player has reach the end
-		//player 1 picks their color, and player 2 gets the other color
+		//Player 1 picks their colour, and P	layer 2 gets the other colour
 		//take current player's turn
 		//switch currentPlayer to other player
 	}
