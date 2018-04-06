@@ -34,10 +34,16 @@ Special tiles:
 
 Randomised on board
 
-
+---------------------------------------------------------------------------------
 
 Use Case Diagram
 https://www.lucidchart.com/invitations/accept/22ae6655-0aaa-40e7-b034-7f8e2a7d7c69
+
+---------------------------------------------------------------------------------
+
+Sequence Diagram Link
+https://www.lucidchart.com/documents/edit/7c00b6d8-3087-49a3-9ada-25508573057d/0
+
 
 
 
