@@ -20,7 +20,7 @@ Blue Piece 1 : Dolphin
 Only moves 1 and gives the rest to shark
 
 Blue Piece 2 : Shark
-Gets movement from dolphin and thats added to whatever it rolls on the dice. It can kill the lion only, and can be killed by the shark only.
+Gets movement from dolphin and thats added to whatever it rolls on the dice. It can kill the lion only, and can be killed by the lion only.
 
 Blue Piece 3 : Jellyfish
 Poisons opposing pieces causing them to move only half of whats on the dice. Standard dice movement
