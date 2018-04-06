@@ -1,20 +1,34 @@
 TODO: Decide on a name for the game
  
-
-Piece 1 : Turtle
+---------------------------------------------------------------------------
+Green Piece 1 : Turtle
 Only moves when 1 or 6 is rolled
 Once on last row and 6 is rolled then advances to finish 
 
-Piece 2: Dog
+Green Piece 2: Dog
 standard movement
 
-Piece 3: Lion
-standard dice movement | kills everyone else, only weaskness the other lion.
+Green Piece 3: Lion
+standard dice movement | kills everyone else, only weakness is the shark
 
-
-Piece 4: Rabbit
+Green Piece 4: Rabbit
 Can move double the dice
 
+------------------------------------------------------------------------------
+
+Blue Piece 1 : Dolphin
+Only moves 1 and gives the rest to shark
+
+Blue Piece 2 : Shark
+Gets movement from dolphin and thats added to whatever it rolls on the dice. It can kill the lion only, and can be killed by the shark only.
+
+Blue Piece 3 : Jellyfish
+Poisons opposing pieces causing them to move only half of whats on the dice. Standard dice movement
+
+Blue Piece 4: Electric EEl
+Shocks opposing pieces causing them to miss one turn. Standard dice movement
+
+---------------------------------------------------------------------------------
 
 Special tiles:
 
