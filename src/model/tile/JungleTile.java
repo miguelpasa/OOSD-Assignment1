@@ -1,16 +1,23 @@
 package model.tile;
 
 public class JungleTile implements Tile {
-	
-	int number = 0;
 
-	@Override
-	public void setNumber(int numberToSet) {
-		this.number = numberToSet;
+	int tileRow = 0;
+	int tileColumn = 0;
+
+	public JungleTile(int row, int column) {
+		this.tileRow = row;
+		this.tileColumn = column;
 	}
 
 	@Override
-	public int getNumber() {
-		return number;
+	public int getRow() {
+		return this.tileRow;
 	}
+
+	@Override
+	public int getColumn() {
+		return this.tileColumn;
+	}
+
 }
