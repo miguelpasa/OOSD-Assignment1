@@ -8,7 +8,7 @@ package model.piece.ocean;
 
 import java.util.ArrayList;
 
-import model.Board;
+import model.SquareBoard;
 import model.DiceSingleton;
 import model.piece.Piece;
 import model.tile.OceanTile;
@@ -18,9 +18,9 @@ public class ElectricEelPiece implements Piece {
 
 	private int pieceColumn;
 	private int pieceRow;
-	private Board board;
+	private SquareBoard board;
 	
-	public ElectricEelPiece(int startColumn, int startRow, Board board) {
+	public ElectricEelPiece(int startColumn, int startRow, SquareBoard board) {
 		this.pieceColumn = startColumn;
 		this.pieceRow = startRow;
 		this.board = board;
@@ -34,7 +34,7 @@ public class ElectricEelPiece implements Piece {
 			if (this.pieceColumn < 4) {
 				this.pieceColumn++;
 			} else {
-				this.pieceRow++;
+				this.pieceRow--;
 				this.pieceColumn = 0;
 			}
 		}
@@ -51,6 +51,19 @@ public class ElectricEelPiece implements Piece {
 	public void capture(Piece piecetoCapture) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public int getRow() {
+		return this.pieceRow;
+	}
+
+	public int getColumn() {
+		return this.pieceColumn;
+	}
+
+	@Override
+	public String getPieceType() {
+		return "eel";
 	}
 
 }

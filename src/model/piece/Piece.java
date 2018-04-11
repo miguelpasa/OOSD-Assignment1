@@ -6,4 +6,10 @@ public interface Piece {
 	void move();
 	
 	void capture(Piece piecetoCapture);
+	
+	int getRow();
+	
+	int getColumn();
+	
+	String getPieceType();
 }

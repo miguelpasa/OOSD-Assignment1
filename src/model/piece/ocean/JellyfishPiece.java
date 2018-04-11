@@ -8,7 +8,7 @@ package model.piece.ocean;
 
 import java.util.ArrayList;
 
-import model.Board;
+import model.SquareBoard;
 import model.DiceSingleton;
 import model.piece.Piece;
 import model.tile.OceanTile;
@@ -18,9 +18,9 @@ public class JellyfishPiece implements Piece {
 
 	int pieceColumn;
 	int pieceRow;
-	Board board;
+	SquareBoard board;
 	
-	public JellyfishPiece(int startColumn, int startRow, Board board) {
+	public JellyfishPiece(int startColumn, int startRow, SquareBoard board) {
 		this.pieceColumn = startColumn;
 		this.pieceRow = startRow;
 		this.board = board;
@@ -34,7 +34,7 @@ public class JellyfishPiece implements Piece {
 			if (this.pieceColumn < 4) {
 				this.pieceColumn++;
 			} else {
-				this.pieceRow++;
+				this.pieceRow--;
 				this.pieceColumn = 0;
 			}
 		}
@@ -51,5 +51,18 @@ public class JellyfishPiece implements Piece {
 	public void capture(Piece piecetoCapture) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public int getRow() {
+		return this.pieceRow;
+	}
+
+	public int getColumn() {
+		return this.pieceColumn;
+	}
+
+	@Override
+	public String getPieceType() {
+		return "jellyfish";
 	}
 }

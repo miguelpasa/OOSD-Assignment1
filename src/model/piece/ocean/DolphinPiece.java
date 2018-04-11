@@ -7,17 +7,20 @@
 package model.piece.ocean;
 
 import model.DiceSingleton;
+import model.SquareBoard;
 import model.piece.Piece;
 
 public class DolphinPiece implements Piece {
 
 	int pieceColumn;
 	int pieceRow;
+	SquareBoard board;
 	SharkPiece sharkPieceLink = null;
 
-	public DolphinPiece(int startColumn, int startRow) {
+	public DolphinPiece(int startColumn, int startRow, SquareBoard board) {
 		this.pieceColumn = startColumn;
 		this.pieceRow = startRow;
+		this.board = board;
 	}
 
 	@Override
@@ -28,7 +31,7 @@ public class DolphinPiece implements Piece {
 		if (this.pieceColumn < 4) {
 			this.pieceColumn++;
 		} else {
-			this.pieceRow++;
+			this.pieceRow--;
 			this.pieceColumn = 0;
 		}
 	}
@@ -41,6 +44,19 @@ public class DolphinPiece implements Piece {
 
 	public void setSharkLink(SharkPiece shark) {
 		this.sharkPieceLink = shark;
+	}
+	
+	public int getRow() {
+		return this.pieceRow;
+	}
+
+	public int getColumn() {
+		return this.pieceColumn;
+	}
+
+	@Override
+	public String getPieceType() {
+		return "dolphin";
 	}
 
 }

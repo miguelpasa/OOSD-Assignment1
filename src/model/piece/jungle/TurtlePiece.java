@@ -8,16 +8,19 @@
 package model.piece.jungle;
 
 import model.DiceSingleton;
+import model.SquareBoard;
 import model.piece.Piece;
 
 public class TurtlePiece implements Piece {
 
 	int pieceColumn;
 	int pieceRow;
+	SquareBoard board;
 
-	public TurtlePiece(int startColumn, int startRow) {
+	public TurtlePiece(int startColumn, int startRow, SquareBoard board) {
 		this.pieceColumn = startColumn;
 		this.pieceRow = startRow;
+		this.board = board;
 	}
 
 	@Override
@@ -39,5 +42,18 @@ public class TurtlePiece implements Piece {
 	public void capture(Piece piecetoCapture) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	public int getRow() {
+		return this.pieceRow;
+	}
+
+	public int getColumn() {
+		return this.pieceColumn;
+	}
+
+	@Override
+	public String getPieceType() {
+		return "turtle";
 	}
 }
