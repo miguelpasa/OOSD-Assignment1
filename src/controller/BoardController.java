@@ -15,8 +15,11 @@ public class BoardController {
 		for(Piece piece : board.getJunglePieces()) {
 			int pieceRow = board.getJunglePieceLocations().get(piece.getPieceType()).getRow();
 			int pieceColumn = board.getJunglePieceLocations().get(piece.getPieceType()).getColumn();
-			
 			//update the board view here
 		}
+	}
+	
+	public SquareBoard getBoard() {
+		return this.board;
 	}
 }

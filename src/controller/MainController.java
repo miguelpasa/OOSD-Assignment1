@@ -3,20 +3,20 @@ package controller;
 import java.util.ArrayList;
 
 import model.Player;
-import model.SquareBoard;
 
 public class MainController {
 
 	public static void main(String[] args) {
 		
 		//initialising game elements
-		SquareBoard board = new SquareBoard();
+		BoardController boardController = new BoardController();
 		
-		Player playerOne = new Player("Miguel", false, board); //jungle
-		Player playerTwo = new Player("Nasrin", true, board); //ocean
-		ArrayList<Player> playerArray = new ArrayList<Player>();
-		playerArray.add(playerOne);
-		playerArray.add(playerTwo);
+		Player playerOne = new Player("Miguel", false, boardController.getBoard()); //jungle
+		Player playerTwo = new Player("Nasrin", true, boardController.getBoard()); //ocean
+		
+		
+		Game game = new Game(playerOne, playerTwo);
+		game.start();
 		
 		//initialise Board
 		//initialise Players
