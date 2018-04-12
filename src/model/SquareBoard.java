@@ -25,7 +25,6 @@ public class SquareBoard {
 	private ArrayList<Piece> oceanPieces = new ArrayList<Piece>();
 	private Map<Piece, Tile> junglePieceLocations = new HashMap<Piece, Tile>();
 	private Map<Piece, Tile> oceanPieceLocations = new HashMap<Piece, Tile>();
-
 	private ArrayList<ArrayList<Tile>> tileArray = new ArrayList<ArrayList<Tile>>();
 
 	public SquareBoard() {

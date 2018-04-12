@@ -11,6 +11,8 @@ public class MainController {
 		//initialising game elements
 		BoardController boardController = new BoardController();
 		
+		
+		
 		Player playerOne = new Player("Miguel", false, boardController.getBoard()); //jungle
 		Player playerTwo = new Player("Nasrin", true, boardController.getBoard()); //ocean
 		

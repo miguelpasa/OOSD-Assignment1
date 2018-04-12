@@ -6,6 +6,7 @@
 
 package model.piece.jungle;
 
+import model.Dice;
 import model.DiceSingleton;
 import model.SquareBoard;
 import model.piece.Piece;
@@ -24,7 +25,7 @@ public class DogPiece implements Piece {
 
 	@Override
 	public void move() {
-		int diceRoll = DiceSingleton.getDice().roll();
+		int diceRoll = Dice.getSingletoneDice().roll();
 
 		for (int i = 0; i < diceRoll; i++) {
 			if (this.pieceColumn < 4) {
