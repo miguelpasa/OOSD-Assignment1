@@ -6,7 +6,7 @@
 
 package model.piece.ocean;
 
-import model.DiceSingleton;
+import model.Dice;
 import model.SquareBoard;
 import model.piece.Piece;
 
@@ -25,7 +25,7 @@ public class DolphinPiece implements Piece {
 
 	@Override
 	public void move() {
-		int toGiveToShark = DiceSingleton.getDice().roll() - 1;
+		int toGiveToShark = Dice.getSingletoneDice().roll();;
 		this.sharkPieceLink.setMovementFromDolphin(toGiveToShark);
 
 		if (this.pieceColumn < 4) {
@@ -34,6 +34,9 @@ public class DolphinPiece implements Piece {
 			this.pieceRow--;
 			this.pieceColumn = 0;
 		}
+		
+		System.out.println("dice was: " + 1 + ". dolphin moved to " + this.pieceRow + " " + this.pieceColumn);
+
 	}
 
 	@Override

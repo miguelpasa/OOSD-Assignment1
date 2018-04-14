@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class Player {
 	
 	private String playerName;
 	private boolean playerColorIsBlue;
-	private Map<String, Piece> pieceArray = new HashMap<String, Piece>();
+	private ArrayList<Piece> pieceArray = new ArrayList<Piece>();
 	private SquareBoard board;
 	
 	public Player(String name, boolean isBlue, SquareBoard board) {
@@ -28,27 +29,35 @@ public class Player {
 		
 		//creating the pieces for each player, based on the player's color
 		if(!isBlue) {
-			pieceArray.put("dog", new DogPiece(0,0, board));
-			pieceArray.put("lion", new LionPiece(0,1, board));
-			pieceArray.put("rabbit", new RabbitPiece(0, 2, board));
-			pieceArray.put("turtle", new TurtlePiece(0, 3, board));
+			pieceArray.add(new DogPiece(0,0, board));
+			pieceArray.add(new LionPiece(1,0, board));
+			pieceArray.add(new RabbitPiece(2, 0, board));
+			pieceArray.add(new TurtlePiece(3, 0, board));
 		} else {
-			pieceArray.put("dolphin", new DolphinPiece(5, 0, board));
-			pieceArray.put("eel", new ElectricEelPiece(5, 1, board));
-			pieceArray.put("jellyfish", new JellyfishPiece(5, 2, board));
-			pieceArray.put("shark", new SharkPiece(5, 3, board));
+			DolphinPiece dolphin = new DolphinPiece(0, 4, board);
+			SharkPiece shark = new SharkPiece(3, 4, board);
+			pieceArray.add(dolphin);
+			pieceArray.add(new ElectricEelPiece(1, 4, board));
+			pieceArray.add(new JellyfishPiece(2, 4, board));
+			pieceArray.add(shark);
+			dolphin.setSharkLink(shark);
 		}
 	}
 	
 	//@param pieceName the identifier for the piece e.g. "dog" or "dolphin"
 	public void takeTurn(String pieceName) {
-		Iterator it = this.pieceArray.entrySet().iterator();
-		while(it.hasNext()) {
-			Map.Entry<String, Piece> pair = (Map.Entry<String, Piece>)it.next();
-			if(pair.getKey().equals(pieceName)) {
-				pair.getValue().move();
+		for(Piece piece : this.pieceArray) {
+			if(piece.getPieceType().equals(pieceName)) {
+				piece.move();
 			}
-			it.remove();
 		}
+	}
+	
+	public String getName() {
+		return this.playerName;
+	}
+	
+	public ArrayList<Piece> getPieceArray() {
+		return this.pieceArray;
 	}
 }

@@ -7,7 +7,7 @@
 
 package model.piece.jungle;
 
-import model.DiceSingleton;
+import model.Dice;
 import model.SquareBoard;
 import model.piece.Piece;
 
@@ -25,8 +25,7 @@ public class RabbitPiece implements Piece {
 
 	@Override
 	public void move() {
-		int diceRoll = DiceSingleton.getDice().roll();
-		
+		int diceRoll = Dice.getSingletoneDice().roll();		
 		int toMove = diceRoll*2;
 		
 		for(int i = 0; i < toMove; i++) {
@@ -37,6 +36,9 @@ public class RabbitPiece implements Piece {
 				this.pieceColumn = 0;
 			}
 		}
+		
+		System.out.println("dice was: " + diceRoll + ". rabbit moved to " + this.pieceRow + " " + this.pieceColumn);
+
 	}
 
 	@Override

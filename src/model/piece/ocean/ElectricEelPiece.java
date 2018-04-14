@@ -8,8 +8,8 @@ package model.piece.ocean;
 
 import java.util.ArrayList;
 
+import model.Dice;
 import model.SquareBoard;
-import model.DiceSingleton;
 import model.piece.Piece;
 import model.tile.OceanTile;
 import model.tile.Tile;
@@ -28,7 +28,7 @@ public class ElectricEelPiece implements Piece {
 	
 	@Override
 	public void move() {
-		int toMove = DiceSingleton.getDice().roll();
+		int toMove = Dice.getSingletoneDice().roll();
 
 		for (int i = 0; i < toMove; i++) {
 			if (this.pieceColumn < 4) {
@@ -39,12 +39,14 @@ public class ElectricEelPiece implements Piece {
 			}
 		}
 
-		ArrayList<ArrayList<Tile>> tileArray = this.board.getTileArray();
-		Tile currentTile = tileArray.get(this.pieceRow).get(pieceColumn);
-		
-		if(currentTile instanceof OceanTile) {
-			((OceanTile)tileArray.get(this.pieceRow).get(pieceColumn)).setShocked(true);
-		}
+		System.out.println("dice was: " + toMove + ". eel moved to " + this.pieceRow + " " + this.pieceColumn);
+
+//		ArrayList<ArrayList<Tile>> tileArray = this.board.getTileArray();
+//		Tile currentTile = tileArray.get(this.pieceRow).get(pieceColumn);
+//		
+//		if(currentTile instanceof OceanTile) {
+//			((OceanTile)tileArray.get(this.pieceRow).get(pieceColumn)).setShocked(true);
+//		}
 	}
 
 	@Override

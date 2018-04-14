@@ -23,8 +23,6 @@ public class SquareBoard {
 
 	private ArrayList<Piece> junglePieces = new ArrayList<Piece>();
 	private ArrayList<Piece> oceanPieces = new ArrayList<Piece>();
-	private Map<Piece, Tile> junglePieceLocations = new HashMap<Piece, Tile>();
-	private Map<Piece, Tile> oceanPieceLocations = new HashMap<Piece, Tile>();
 	private ArrayList<ArrayList<Tile>> tileArray = new ArrayList<ArrayList<Tile>>();
 
 	public SquareBoard() {
@@ -53,19 +51,11 @@ public class SquareBoard {
 		return this.oceanPieces;
 	}
 	
-	public Map<Piece, Tile> getJunglePieceLocations() {
-		return this.junglePieceLocations;
+	public void setJunglePieces(ArrayList<Piece> pieces) {
+		this.junglePieces = pieces;
 	}
 	
-	public Map<Piece, Tile> getOceanPieceLocations() {
-		return this.oceanPieceLocations;
-	}
-	
-	public void setJunglePieceLocations(Map<Piece, Tile> junglePieceLocationsParam) {
-		this.junglePieceLocations = junglePieceLocationsParam;
-	}
-	
-	public void setOceanPieceLocations(Map<Piece, Tile> oceanPieceLocationsParam) {
-		this.oceanPieceLocations = oceanPieceLocationsParam;
+	public void setOceanPieces(ArrayList<Piece> pieces) {
+		this.oceanPieces = pieces;
 	}
 }

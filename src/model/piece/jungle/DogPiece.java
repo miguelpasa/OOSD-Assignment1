@@ -7,7 +7,6 @@
 package model.piece.jungle;
 
 import model.Dice;
-import model.DiceSingleton;
 import model.SquareBoard;
 import model.piece.Piece;
 
@@ -35,6 +34,9 @@ public class DogPiece implements Piece {
 				this.pieceColumn = 0;
 			}
 		}
+		
+		System.out.println("dice was: " + diceRoll + ". dog moved to " + this.pieceRow + " " + this.pieceColumn);
+
 	}
 
 	@Override

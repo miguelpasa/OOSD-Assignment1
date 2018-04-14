@@ -7,7 +7,7 @@
 
 package model.piece.jungle;
 
-import model.DiceSingleton;
+import model.Dice;
 import model.SquareBoard;
 import model.piece.Piece;
 
@@ -25,8 +25,7 @@ public class TurtlePiece implements Piece {
 
 	@Override
 	public void move() {
-		int diceRoll = DiceSingleton.getDice().roll();
-
+		int diceRoll = Dice.getSingletoneDice().roll();
 		if (diceRoll == 1) {
 			if (this.pieceRow > 0) {
 				this.pieceRow--;
@@ -36,6 +35,9 @@ public class TurtlePiece implements Piece {
 				this.pieceRow++;
 			}
 		}
+		
+		System.out.println("dice was: " + diceRoll + ". turtle moved to " + this.pieceRow + " " + this.pieceColumn);
+
 	}
 
 	@Override

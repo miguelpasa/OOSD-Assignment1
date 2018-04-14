@@ -7,7 +7,7 @@
 
 package model.piece.ocean;
 
-import model.DiceSingleton;
+import model.Dice;
 import model.SquareBoard;
 import model.piece.Piece;
 
@@ -26,7 +26,7 @@ public class SharkPiece implements Piece {
 
 	@Override
 	public void move() {
-		int toMove = DiceSingleton.getDice().roll();
+		int toMove = Dice.getSingletoneDice().roll();
 		
 		//will only start if dolphin piece moved before shark piece
 		if(movementFromDolphin < 6) { 
@@ -40,13 +40,13 @@ public class SharkPiece implements Piece {
 				this.pieceRow--;
 				this.pieceColumn = 0;
 			}
+			
 		}
 	}
 
 	@Override
 	public void capture(Piece piecetoCapture) {
 		// TODO Auto-generated method stub
-
 	}
 	
 	public void setMovementFromDolphin(int movement) {
